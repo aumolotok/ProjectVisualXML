@@ -21,6 +21,8 @@ namespace MappingTool
         {
             int i = 0;
             i = 5;
+
+            i = 6;
         }
     }
 }
