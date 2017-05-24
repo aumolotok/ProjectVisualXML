@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace MappingTool
 {
@@ -19,10 +20,19 @@ namespace MappingTool
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int i = 0;
-            i = 5;
-
-            i = 6;
+            //Console.WriteLine("5");
+            XDocument XDoc = XDocument.Load(@"C:\GitHub\ProjectVisualXML\MappingTool\MappingTool\XMLFile1.xml");
+            //Console.WriteLine(XDoc);
+            XElement XEl = XDoc;
+            foreach (XElement node in XDoc.Descendants())
+            {
+                IEnumerable<XElement> voids = node.Descendants();
+                //if (node.Nodes().OfType<XElement>())
+                //{
+                //    Console.WriteLine(node.Value);
+                //}
+                Console.WriteLine(node.Name);
+            }
         }
     }
 }
