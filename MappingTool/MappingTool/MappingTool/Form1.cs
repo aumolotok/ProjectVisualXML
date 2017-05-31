@@ -20,49 +20,17 @@ namespace MappingTool
 
         private void button1_Click(object sender, EventArgs e)
         {
-            PetShop pet = new PetShop();
-            pet.TryMultyObjects(5);
-            //Console.WriteLine("5");
-            //XDocument XDoc = XDocument.Load(@"C:\GitHub\ProjectVisualXML\MappingTool\MappingTool\XMLFile1.xml");
+
+            Console.WriteLine("5");
+            XDocument XDoc = XDocument.Load(@"C:\GitHub\ProjectVisualXML\MappingTool\MappingTool\XMLFile1.xml");
             //Console.WriteLine(XDoc);
-            //XElement XEl = XDoc;
-            //foreach (XElement node in XDoc.Descendants())
-            //{
-            //    IEnumerable<XElement> voids = node.Descendants();
-            //    //if (node.Nodes().OfType<XElement>())
-            //    //{
-            //    //    Console.WriteLine(node.Value);
-            //    //}
-            //    Console.WriteLine(node.Name);
-            //}
+            List<XElement> testlist = Converter.XmlEater(XDoc);
+            Converter.ShowXpaths(testlist);
         }
 
         
 
-        class cat
-        {
-            public int color;
 
-            public cat(int color)
-            {
-                this.color = color;
-            }
-
-            public cat() { }
-
-        }
-        class PetShop
-        {
-            public void TryMultyObjects(int number)
-            {
-                cat[] cats = new cat[number];
-                for (int i = 0; i < cats.Length; i++)
-                {
-                    cats[i] = new cat(i);
-                    Console.WriteLine(cats[i].color);
-                }
-            }
-        }
 
 
    
@@ -87,6 +55,40 @@ namespace MappingTool
 
             this.xpath = xpath;
         }
+    }
+
+    static class Converter
+    {
+        public static List<XElement> XmlEater(XDocument XDoc)
+        {
+            List<XElement> ellist = new List<XElement>();
+
+            foreach (XElement element in XDoc.Descendants())
+                {
+                    if (element.Descendants().Count() == 0)
+                    {
+                        ellist.Add(element);
+                    }
+                }
+            return ellist;
+        }
+
+        public static void ShowXpaths(List<XElement> ellist)
+        {
+            foreach (XElement el in ellist)
+            {
+                var Array = el.AncestorsAndSelf().ToArray();
+                for (int i = Array.Length-1; i >=0; i--)
+                {
+                    Console.Write(Array[i].Name + @"/");
+                }
+                Console.WriteLine();
+            }
+
+        }
+
+
+
     }
 }
 //    static public void WR()
