@@ -32,13 +32,16 @@ namespace XmlCheckingHelper
 
             List<ElementWithQuestion> questionList = NodeFinder.BuildQuestionObjexts(ellist);
 
-            foreach (ElementWithQuestion element in questionList)
-            {
-                Console.WriteLine(element.Code);
-                Console.WriteLine(element.Answer);
-                Console.WriteLine(element.ExtraText);
-                Console.WriteLine();
-            }
+            List<ComposedElementAndDB> compList = ComposedElementAndDB.GetComposedList(questionList);
+
+            ComposedElementAndDB.ShowObjects(compList);
+            //foreach (ElementWithQuestion element in questionList)
+            //{
+            //    Console.WriteLine(element.Code);
+            //    Console.WriteLine(element.Answer);
+            //    Console.WriteLine(element.ExtraText);
+            //    Console.WriteLine();
+            //}
 
         }
     }

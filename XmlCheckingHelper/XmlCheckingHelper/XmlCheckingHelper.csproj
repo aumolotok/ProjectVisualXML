@@ -68,6 +68,25 @@
     </ApplicationDefinition>
     <Compile Include="ComposedElementAndDB.cs" />
     <Compile Include="ElementWithQuestion.cs" />
+    <Compile Include="QuestionModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuestionModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuestionModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuestionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuestionModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuestionModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Questions.cs">
+      <DependentUpon>QuestionModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -106,15 +125,36 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <EntityDeploy Include="QuestionModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QuestionModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="QuestionModel.edmx.diagram">
+      <DependentUpon>QuestionModel.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="XmlDoc.xml" />
+    <Resource Include="XmlDoc.xml">
+      <SubType>Designer</SubType>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="QuestionModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuestionModel.edmx</DependentUpon>
+      <LastGenOutput>QuestionModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="QuestionModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QuestionModel.edmx</DependentUpon>
+      <LastGenOutput>QuestionModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
