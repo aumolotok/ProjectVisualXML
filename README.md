@@ -1,2 +1,0 @@
-# ProjectVisualXML
-General Information

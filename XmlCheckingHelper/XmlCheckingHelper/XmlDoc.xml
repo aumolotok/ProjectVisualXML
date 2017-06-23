@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Forest>
+  <Animals>
+    <Animal Name = "Fox">
+      <Question>
+        <QuestiobCd> Gen01</QuestiobCd>
+        <YesNo> Yes </YesNo>
+        <ExtraText> OOOOOUUUUUU </ExtraText>
+      </Question>
+      <Question>
+        <QuestiobCd> Gen02</QuestiobCd>
+        <YesNo> No </YesNo>
+        <ExtraText> Anything </ExtraText>
+      </Question>
+      <Question>
+        <QuestiobCd> Gen03</QuestiobCd>
+        <YesNo> Yes </YesNo>
+        <ExtraText> Chiken </ExtraText>
+      </Question>
+      <Question>
+        <QuestiobCd> Gen04</QuestiobCd>
+        <YesNo> No </YesNo>
+        <ExtraText> Red Vine </ExtraText>
+      </Question>
+    </Animal>  
+    <Animal Name = "Apper">
+      <Question>
+        <QuestiobCd> Gen01</QuestiobCd>
+        <YesNo> No </YesNo>
+        <ExtraText> Oink-oink </ExtraText>
+      </Question>
+      <Question>
+        <QuestiobCd> Gen02</QuestiobCd>
+        <YesNo> Yes </YesNo>
+        <ExtraText> Fat </ExtraText>
+      </Question>
+      <Question>
+        <QuestiobCd> Gen03</QuestiobCd>
+        <YesNo> No </YesNo>
+        <ExtraText> Everything </ExtraText>
+      </Question>
+      <Question>
+        <QuestiobCd> Gen04</QuestiobCd>
+        <YesNo> Yes </YesNo>
+        <ExtraText> Water </ExtraText>
+      </Question>        
+    </Animal>
+  </Animals>  
+</Forest> 
