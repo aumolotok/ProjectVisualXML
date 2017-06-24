@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="XmlCheckingHelper.QuestionTable"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:XmlCheckingHelper"
+             mc:Ignorable="d" 
+             d:DesignHeight="116.547" d:DesignWidth="761.87">
+    <Grid Margin="0,0,-1,1" Background="#FFD3FFED">
+        <TextBox x:Name="AcordTextBox" HorizontalAlignment="Left" Height="38" Margin="13,35,0,0" TextWrapping="Wrap" Text="AcordTextBox" VerticalAlignment="Top" Width="699" Background ="#FFE0EDF0"/>
+        <Label x:Name="AcordTextLabel" Content="Acord Text:" HorizontalAlignment="Left" Height="25" Margin="11,8,0,0" VerticalAlignment="Top" Width="103"/>
+        <Label x:Name="YesNoNotanceLable" Content="Yes/No/Notance:" HorizontalAlignment="Left" Margin="485,80,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="YesNoNotance" HorizontalAlignment="Left" Height="23" Margin="600,81,0,0" TextWrapping="Wrap" Text="Yes/No/Notance" VerticalAlignment="Top" Width="111"/>
+        <Label x:Name="XmlTaglabel" Content="XmlTag" HorizontalAlignment="Left" Margin="18,79,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.566,2.043"/>
+        <TextBox x:Name="TagTextBox" HorizontalAlignment="Left" Height="23" Margin="81,81,0,0" TextWrapping="Wrap" Text="Tag" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="SectionLabel" Content="Section" HorizontalAlignment="Left" Margin="240,80,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="SectionTextBox" HorizontalAlignment="Left" Height="23" Margin="325,83,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Grid HorizontalAlignment="Left" Height="82" Margin="720,19,0,0" VerticalAlignment="Top" Width="35">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+            <Button x:Name="Correct" Grid.Column="0" Grid.Row="0">
+                <Image Source="Resources/ok.png"></Image>
+            </Button>
+            <Button x:Name="NotCorrect" Grid.Column="0" Grid.Row="1">
+                <Image Source="Resources/NotCorrect.png"></Image>
+            </Button>
+            <Button x:Name="NotSure" Grid.Column="0" Grid.Row="2">
+                <Image Source="Resources/Cancel.png"></Image>
+            </Button>
+            
+        </Grid>
+        
+        
+        
+        
+        
+    </Grid>
+</UserControl>
