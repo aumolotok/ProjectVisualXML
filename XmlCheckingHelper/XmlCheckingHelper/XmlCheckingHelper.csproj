@@ -92,8 +92,8 @@
     <Compile Include="Questions.cs">
       <DependentUpon>QuestionModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="QuestionTable.xaml.cs">
-      <DependentUpon>QuestionTable.xaml</DependentUpon>
+    <Compile Include="VisualQuestionFields.xaml.cs">
+      <DependentUpon>VisualQuestionFields.xaml</DependentUpon>
     </Compile>
     <Compile Include="sysdiagrams.cs" />
     <Page Include="MainWindow.xaml">
@@ -108,7 +108,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="QuestionTable.xaml">
+    <Page Include="VisualQuestionFields.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

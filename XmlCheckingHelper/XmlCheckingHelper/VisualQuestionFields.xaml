@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="XmlCheckingHelper.QuestionTable"
+﻿<UserControl x:Class="XmlCheckingHelper.VisualQuestionFields"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -22,7 +22,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
             <Button x:Name="Correct" Grid.Column="0" Grid.Row="0">
-                <Image Source="Resources/ok.png"></Image>
+                <Image Source="Resources/Correct.png"></Image>
             </Button>
             <Button x:Name="NotCorrect" Grid.Column="0" Grid.Row="1">
                 <Image Source="Resources/NotCorrect.png"></Image>

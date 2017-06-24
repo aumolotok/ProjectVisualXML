@@ -4,14 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using Microsoft.Win32;
 
 namespace XmlCheckingHelper
 {
     static class NodeFinder
     {
-        public static List<XElement> FindTheNodes (/*XDocument Xdoc,*/ string requiredNodeName)
+        public static List<XElement> FindTheNodes (string path, string requiredNodeName)
         {
-            XDocument Xdoc = XDocument.Load(@"C:\GitHub\ProjectVisualXML\XmlCheckingHelper\XmlCheckingHelper\XmlDoc.xml");
+            //XDocument Xdoc = XDocument.Load(@"C:\GitHub\ProjectVisualXML\XmlCheckingHelper\XmlCheckingHelper\XmlDoc.xml");
+            XDocument Xdoc = XDocument.Load(path);
             List<XElement> elementList = new List<XElement>();
 
             foreach (XElement element in Xdoc.Descendants())
@@ -41,6 +43,16 @@ namespace XmlCheckingHelper
             }
 
             return objectList;
+        }
+
+       public static string GetPath()
+        {
+            var dialog = new OpenFileDialog();
+            if (dialog.ShowDialog() == true)
+            {
+                return dialog.FileName;
+            }
+            return null;
         }
     }
 }

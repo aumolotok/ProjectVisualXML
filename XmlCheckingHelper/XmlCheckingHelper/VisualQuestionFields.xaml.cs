@@ -18,11 +18,21 @@ namespace XmlCheckingHelper
     /// <summary>
     /// Логика взаимодействия для QuestionTable.xaml
     /// </summary>
-    public partial class QuestionTable : UserControl
+    public partial class VisualQuestionFields : UserControl
     {
-        public QuestionTable()
+        public VisualQuestionFields()
         {
             InitializeComponent();
+        }
+
+        public VisualQuestionFields( ComposedElementAndDB element)
+        {
+            InitializeComponent();
+
+            this.AcordTextBox.Text = element.AcordText;
+            this.TagTextBox.Text = element.Question.Code;
+            this.SectionTextBox.Text = element.Section;
+            this.YesNoNotance.Text = element.Question.Answer;
         }
     }
 }

@@ -7,9 +7,9 @@ using System.Xml.Linq;
 
 namespace XmlCheckingHelper
 {
-    class ComposedElementAndDB
+    public class ComposedElementAndDB
     {
-        public ElementWithQuestion Question { get; private set; }
+        public ElementWithQuestion Question { get; set; }
 
         public string NumberOfAcord { get; private set; }
 
@@ -39,7 +39,7 @@ namespace XmlCheckingHelper
             HelpText = helpText;
         }
 
-        private static ComposedElementAndDB Compose(ElementWithQuestion element)
+        public static ComposedElementAndDB Compose(ElementWithQuestion element)
         {
             QustionCodesEntities1 contex = new QustionCodesEntities1();
 

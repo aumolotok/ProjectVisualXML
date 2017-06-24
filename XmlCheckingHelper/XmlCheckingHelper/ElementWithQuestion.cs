@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace XmlCheckingHelper
 {
-    class ElementWithQuestion
+    public class ElementWithQuestion
     {
         public string Code { get; set; }
 

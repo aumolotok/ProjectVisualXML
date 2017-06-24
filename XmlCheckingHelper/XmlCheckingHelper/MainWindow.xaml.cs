@@ -28,20 +28,24 @@ namespace XmlCheckingHelper
 
         private void CheckXml_Click(object sender, RoutedEventArgs e)
         {
-            List<XElement> ellist = NodeFinder.FindTheNodes("Question");
+            string path = NodeFinder.GetPath();
 
-            List<ElementWithQuestion> questionList = NodeFinder.BuildQuestionObjexts(ellist);
+            if (path != null)
+            {
 
-            List<ComposedElementAndDB> compList = ComposedElementAndDB.GetComposedList(questionList);
+                List<XElement> ellist = NodeFinder.FindTheNodes(path,"Question");
 
-            ComposedElementAndDB.ShowObjects(compList);
-            //foreach (ElementWithQuestion element in questionList)
-            //{
-            //    Console.WriteLine(element.Code);
-            //    Console.WriteLine(element.Answer);
-            //    Console.WriteLine(element.ExtraText);
-            //    Console.WriteLine();
-            //}
+                List<ElementWithQuestion> questionList = NodeFinder.BuildQuestionObjexts(ellist);
+
+                List<ComposedElementAndDB> compList = ComposedElementAndDB.GetComposedList(questionList);
+
+                foreach (ComposedElementAndDB element in compList)
+                {
+                    VisualQuestionFields fields = new VisualQuestionFields(element);
+
+                    VisualPanel.Children.Add(fields);
+                }
+            }
 
         }
     }
