@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using System.Data;
 
 namespace XmlCheckingHelper
 {
@@ -40,10 +41,11 @@ namespace XmlCheckingHelper
         }
 
         public static ComposedElementAndDB Compose(ElementWithQuestion element)
-        {
-            QustionCodesEntities1 contex = new QustionCodesEntities1();
+        { 
 
-            var row = (from question in contex.Questions
+            QuestionCodesEntities1 contex = new QuestionCodesEntities1();
+
+            var row = (from question in WorkerWithDB.QuestionsFromDB
                        where question.QuestionCd == element.Code
                        select question).SingleOrDefault();
 

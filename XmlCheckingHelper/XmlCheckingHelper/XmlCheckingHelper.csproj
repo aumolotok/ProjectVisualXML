@@ -96,6 +96,7 @@
       <DependentUpon>VisualQuestionFields.xaml</DependentUpon>
     </Compile>
     <Compile Include="sysdiagrams.cs" />
+    <Compile Include="WorkWithDB.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

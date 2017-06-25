@@ -7,9 +7,17 @@ using System.Data;
 
 namespace XmlCheckingHelper
 {
-    class WorkerWithDB
+    public static class WorkerWithDB
     {
-        public DataSet QuestionsFromDataBase { get; set; }
+        public static List<XmlCheckingHelper.Questions> QuestionsFromDB { get; set; }
+
+        public static void PullQuestionsFromDB()
+        {
+            QuestionCodesEntities1 context = new QuestionCodesEntities1();
+
+            QuestionsFromDB = (from question in context.Questions
+                               select question).ToList();
+        }
 
 
 

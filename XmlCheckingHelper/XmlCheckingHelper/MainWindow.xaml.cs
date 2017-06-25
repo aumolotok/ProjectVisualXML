@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml.Linq;
+using System.Data;
 
 namespace XmlCheckingHelper
 {
@@ -24,6 +25,13 @@ namespace XmlCheckingHelper
         public MainWindow()
         {
             InitializeComponent();
+            WorkerWithDB.PullQuestionsFromDB();
+
+            //QustionCodesEntities1 contex = new QustionCodesEntities1();
+            //QuestionFromDatabase = (DataSet)(from Questions question in contex.Questions
+            //                                 select question);
+
+
         }
 
         private void CheckXml_Click(object sender, RoutedEventArgs e)
