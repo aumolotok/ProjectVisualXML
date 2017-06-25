@@ -43,10 +43,8 @@ namespace XmlCheckingHelper
         public static ComposedElementAndDB Compose(ElementWithQuestion element)
         { 
 
-            QuestionCodesEntities1 contex = new QuestionCodesEntities1();
-
-            var row = (from question in WorkerWithDB.QuestionsFromDB
-                       where question.QuestionCd == element.Code
+                      var row = (from question in WorkerWithDB.QuestionsFromDB
+                       where question.QuestionCd.StartsWith(element.Code) == true
                        select question).SingleOrDefault();
 
             ComposedElementAndDB obj = new ComposedElementAndDB(element, row.AcordNumber, row.AcordText, row.Section, row.PositionInSection, row.HelpText);
