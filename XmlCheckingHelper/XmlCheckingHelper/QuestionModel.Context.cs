@@ -13,9 +13,9 @@ namespace XmlCheckingHelper
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class QustionCodesEntities1 : DbContext
+    public partial class QuestionCodesEntities1 : DbContext
     {
-        public QustionCodesEntities1()
+        public QuestionCodesEntities1()
             : base("name=QustionCodesEntities1")
         {
         }
